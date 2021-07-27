@@ -1,0 +1,24 @@
+public static void pigLatin(Scanner input)
+{
+    while(input.hasNextLine())
+    {
+        Scanner line = new Scanner(input.nextLine());
+        while(line.hasNext())
+        {
+            String token = line.next().toLowerCase();
+            char c = token.charAt(0);
+            if(c != 'a' &&c != 'e'&& c != 'i' && c != 'o' && c != 'u')
+            {
+                token = token.substring(1,token.length())+c+"ay";
+            }else
+            {
+                token = token+"yay";
+            }
+            System.out.print(token);
+            if(line.hasNext()){
+                System.out.print(" ");
+            }
+        }
+        System.out.println();
+    }
+}
